@@ -8,6 +8,6 @@ process sayHello {
   val x from cheers
   
   """
-  echo '$x world!'
+  echo '$x world! (version 1.1)'
   """
 }
