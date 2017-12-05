@@ -13,4 +13,3 @@ test:
   override:
     - curl -fsSL get.nextflow.io | bash
     - ./nextflow run . 
-    
