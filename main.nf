@@ -5,9 +5,9 @@ cheers = Channel.from 'Bonjour', 'Ciao', 'Hello', 'Hola'
 
 process sayHello {
   input: 
-  val x from cheers
-  
-  """
-  echo '$x world!'
-  """
+    val x from cheers
+  script:
+    """
+    echo '$x world!'
+    """
 }

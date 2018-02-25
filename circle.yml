@@ -12,4 +12,5 @@ general:
 test:
   override:
     - curl -fsSL get.nextflow.io | bash
-    - ./nextflow run . 
+    - ./nextflow run .
+    - ./nextflow run . -with-docker 
