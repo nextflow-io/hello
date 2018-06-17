@@ -7,5 +7,4 @@ install:
 - sudo apt-get -qq update
 - sudo apt-get -qq -y install graphviz
 script:
-- curl -fsSL get.nextflow.io | bash
-- bash -x ./nextflow run .
+- bash ./nextflow run .
