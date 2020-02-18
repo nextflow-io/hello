@@ -10,6 +10,6 @@ install:
 - sudo apt-get -qq update
 - sudo apt-get -qq -y install graphviz realpath
 script:
-- curl -fsSL get.nextflow.io | bash
+- curl -fsSL https://get.nextflow.io | bash
 - ./nextflow run .
 - ./nextflow run . -with-docker 
