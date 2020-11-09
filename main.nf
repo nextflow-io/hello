@@ -8,6 +8,7 @@ process sayHello {
     val x from cheers
   script:
     """
+    sleep 1800
     echo '$x world!'
     """
 }
