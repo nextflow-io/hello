@@ -9,6 +9,10 @@ stdout
 """
 echo $cheers
 """
+script:
+    """
+    echo '$x world!'
+    """
 }
 workflow{
 channel.of('ciaoWorld','HelloWorld','HolaWorld') | sayHello | view
