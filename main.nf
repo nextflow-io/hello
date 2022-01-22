@@ -11,7 +11,7 @@ echo $cheers
 """
 script:
     """
-    echo '$x world!'
+    echo '$world!'
     """
 }
 workflow{
