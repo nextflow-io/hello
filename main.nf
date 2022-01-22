@@ -1,19 +1,19 @@
 nextflow.enable.dsl=2
-
 process sayHello {
-input:
-val cheers
-output:
-stdout
+    input:
+        val cheers
+    output:
+        stdout emit: verbiage
+    script:
+    """
+    echo -n $cheers
+    """
+}
 
-"""
-echo $cheers
-"""
-script:
-    """
-    echo '$world!'
-    """
+workflow {
+    things = channel.of('Hello world!', 'Yo, dude!', 'Duck!')
+    sayHello(things)
+    sayHello.out.verbiage.view()
 }
-workflow{
-channel.of('ciaoWorld','HelloWorld','HolaWorld') | sayHello | view
-}
+
+   
