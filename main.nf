@@ -1,14 +1,17 @@
 #!/usr/bin/env nextflow
-
-cheers = Channel.from 'Bonjour', 'Ciao', 'Hello', 'Hola'
+nextflow.enable.dsl=2 
 
 process sayHello {
-  echo true
   input: 
-    val x from cheers
+    val x
+  output:
+    stdout
   script:
     """
     echo '$x world!'
     """
 }
 
+workflow {
+  Channel.of('Bonjour', 'Ciao', 'Hello', 'Hola') | sayHello | view
+}
