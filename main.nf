@@ -1,13 +1,21 @@
 #!/usr/bin/env nextflow
-echo true
 
-cheers = Channel.from 'Bojour', 'Ciao', 'Hello', 'Hola'
+params.example_key = 'Hello'
 
 process sayHello {
-  input: 
-  val x from cheers
-  
-  """
-  echo '$x mundo!!'
-  """
+    input: 
+        val x
+    
+    output:
+        stdout
+
+    script:
+        """
+        echo '${x} world!'
+        """
 }
+
+workflow {
+    Channel.of(params.example_key) | sayHello | view
+}
+
