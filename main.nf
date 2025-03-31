@@ -12,5 +12,9 @@ process sayHello {
 }
 
 workflow {
-  Channel.of('Bonjour', 'Ciao', 'Hello', 'Hola') | sayHello | view
+  // Si params.greetings no está definido, usa valores por defecto
+  def greetings = params.greetings ?: ['Bonjour', 'Ciao', 'Hello', 'Hola']
+  
+  // Crear un canal con los saludos y ejecutarlo en el proceso
+  Channel.from(greetings) | sayHello | view
 }
