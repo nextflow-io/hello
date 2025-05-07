@@ -1,16 +1,18 @@
 #!/usr/bin/env nextflow
 
 process sayHello {
-  input: 
+    input:
     val x
-  output:
+
+    output:
     stdout
-  script:
+
+    script:
     """
-    echo '$x world!'
+    echo '${x} world!'
     """
 }
 
 workflow {
-  Channel.of('Bonjour', 'Ciao', 'Hello', 'Hola') | sayHello | view
+    Channel.of('Bonjour', 'Ciao', 'Hello', 'Hola') | sayHello | view
 }
