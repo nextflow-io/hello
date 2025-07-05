@@ -1,3 +1,4 @@
 .git
 .nextflow*
+.idea/
 work/
