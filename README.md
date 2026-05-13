@@ -1,6 +1,5 @@
-Hello world script
-====================
+# hello
 
-A simple script showing the basic _"Hello World!"_ example for the Nextflow framework. 
+A simple Nextflow pipeline that prints _"Hello World!"_. 
 
-https://nextflow.io
+https://nextflow.io/

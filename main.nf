@@ -2,17 +2,18 @@
 
 process sayHello {
     input:
-    val x
+    val greeting
 
     output:
     stdout
 
     script:
     """
-    echo '${x} world!'
+    echo '${greeting} world!'
     """
 }
 
 workflow {
-    Channel.of('Bonjour', 'Ciao', 'Hello', 'Hola') | sayHello | view
+    ch_greetings = channel.of('Bonjour', 'Ciao', 'Hello', 'Hola')
+    sayHello(ch_greetings).view()
 }
